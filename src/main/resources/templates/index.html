@@ -1,0 +1,33 @@
+{{> layout/header}}
+
+    <h1>Board</h1>
+
+    <div class="col-md-12">
+        <div calss="row">
+            <div class="col-md-12">
+                <a href="/board/save" role="button" class="btn btn-primary">글 등록</a>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>작성일</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{ #boards }} <!-- (1) -->
+        <tr>
+            <td>{{boardIdx}}</td> <!-- (2) -->
+            <td><a href="/board/update/{{boardIdx}}">{{boardSubject}}</a></td>
+            <td>{{regDt}}</td>
+        </tr>
+        {{ /boards }}
+        </tbody>
+    </table>
+
+{{> layout/footer}}
